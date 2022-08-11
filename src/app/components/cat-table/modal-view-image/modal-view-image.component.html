@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>{{ matDialogData?.tag }}</h1>
+<p>{{ matDialogData?.factsText }}</p>
+<div mat-dialog-content>
+  <div class="image-wrapper">
+    <img [src]="matDialogData?.blobImageUrl" alt="cat image with facts description" srcset="">
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" cdkFocusInitial>Close</button>
+</div>

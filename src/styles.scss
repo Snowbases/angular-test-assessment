@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Fonts import */
+@import "./theme/fonts/inter.scss";
+
+/* Angular material */
+@import "./theme/material/material.scss";
+
+body {
+  display: block;
+  margin: 0;
+}

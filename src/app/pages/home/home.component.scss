@@ -1,0 +1,17 @@
+:host {
+  > div.container {
+    > div.wrapper-cars-table,
+    > div.wrapper-cat-table {
+      margin-bottom: 1em;
+
+      > div.title-wrapper {
+        > h1 {
+          padding-left: 7px;
+          font-family: "Inter";
+          font-size: 1em;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
