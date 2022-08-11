@@ -20,5 +20,4 @@ export class ModalViewImageComponent implements OnInit {
   ngOnInit(): void {
     console.log('matDialogData', this.matDialogData);
   }
-
 }

@@ -19,7 +19,7 @@ export class CatService {
   getRandomGeneratedCatImage(data: { tag: string; factsText: string }): Observable<any> {
     const { tag, factsText } = data;
 
-    return this.httpClient.get(`https://cataas.com/cat/${tag}/says/${factsText}?size=20`, {
+    return this.httpClient.get(`https://cataas.com/c/${tag}/s/${factsText}`, {
       responseType: 'blob',
       observe: 'response'
     });
