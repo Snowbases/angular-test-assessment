@@ -29,26 +29,26 @@ export class CatTableComponent implements OnInit, AfterViewInit {
 
   constructor(public domSanitizer: DomSanitizer, public matDialog: MatDialog, public catService: CatService) {}
 
-  ngOnInit(): void {}
-
-  ngAfterViewInit() {
+  ngOnInit(): void {
     this.catService.getTags().subscribe({
       next: (response) => {
         console.log('getTags response', response);
-        this.cat = response.map((o: any) => ({ tags: o }));
+        this.cat = response.map((value: any) => ({ tags: value }));
         this.catDataSource.data = this.cat;
       },
       error: (error) => {
         console.error('getTags error', error);
       }
     });
+  }
 
+  ngAfterViewInit() {
     this.catDataSource.paginator = this.matPaginator;
   }
 
   openModalViewImage(tag: string): void {
     this.catService.getCatFactsText().subscribe({
-      next: (response) => {
+      next: (response: any) => {
         console.log('getCatFactsText response', response);
 
         let factsText: string = response.data[0];
@@ -69,6 +69,7 @@ export class CatTableComponent implements OnInit, AfterViewInit {
                 let blobImageUrl = this.domSanitizer.bypassSecurityTrustUrl(url);
 
                 const matDialogRef = this.matDialog.open(ModalViewImageComponent, {
+                  maxWidth: '95vw',
                   data: {
                     tag: tag,
                     factsText: factsText,
